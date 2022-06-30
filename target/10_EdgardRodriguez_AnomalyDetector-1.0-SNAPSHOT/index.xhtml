@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="ui-g-4">  
+                <p:panelGrid columns="1">
+                    <p:commandButton value="Ingresar texto" update="resultado feliz miedo triste emocionado molesto aburrido textFlotante dataFlotante" action="#{TextoC.generar()}" />
+                    <p:inputTextarea value="#{TextoC.model.texto}" id="resultado" rows="5" cols="30" />
+                </p:panelGrid>
+            </div>
+            <div class="ui-g-4">
+                <p:panelGrid columns="2">
+                    <p:outputLabel style="font-weight: bold" value="#{TextoC.textoFlotante}" id="textFlotante"></p:outputLabel>
+                    <p:outputLabel style="font-weight: bold" value="#{TextoC.dataFlotante *100}" id="dataFlotante"></p:outputLabel>
+                </p:panelGrid>
+            </div>
+            <div class="ui-g-4">
+                <p:panelGrid columns="2">
+                    <p:outputLabel style="font-weight: bold">feliz</p:outputLabel>
+                    <p:outputLabel id="feliz" value="#{TextoC.model.happy *100}"> %</p:outputLabel>
+                    <p:outputLabel style="font-weight: bold">miedo</p:outputLabel>
+                    <p:outputLabel id="miedo" value="#{TextoC.model.fear *100}"> %</p:outputLabel>
+                    <p:outputLabel style="font-weight: bold">triste</p:outputLabel>
+                    <p:outputLabel id="triste" value="#{TextoC.model.sad *100}"> %</p:outputLabel>
+                    <p:outputLabel style="font-weight: bold">emocionado</p:outputLabel>
+                    <p:outputLabel id="emocionado" value="#{TextoC.model.excited *100}"> %</p:outputLabel>
+                    <p:outputLabel style="font-weight: bold">molesto</p:outputLabel>
+                    <p:outputLabel id="molesto" value="#{TextoC.model.angry *100}"> %</p:outputLabel>
+                    <p:outputLabel style="font-weight: bold">aburrido</p:outputLabel>
+                    <p:outputLabel id="aburrido" value="#{TextoC.model.bored *100}"> %</p:outputLabel>
+                </p:panelGrid>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
